@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>
+appointment
+</title>
+<style>
+body{
+                background:url('login.JPG');
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 100vh;
+}
+#mySearch {
+  width: 50%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid red;
+}
+
+
+#myMenu {
+  list-style-type: none;
+  padding: 10;
+  margin: 0;
+}
+
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: blue;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: grey;
+}
+</style>
+</head>
+<body>
+<center>
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+
+<ul id="myMenu">
+  <li><a href="fix.html">Dr J.Sharukh</a></li>
+  <li><a href="fix.html">Dr V.Ranveer</a></li>
+  <li><a href="fix.html">Dr L.William</a></li>
+  <li><a href="fix.html">Dr U.Roshan</a></li>
+  <li><a href="fix.html">Dr T.Abishek</a></li>
+</ul>
+<br>
+<br>
+<a href="KARTHIproject.html">BACK TO HOME</a>
+<script>
+function myFunction() {
+  
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</center>
+</body>
+</html>
